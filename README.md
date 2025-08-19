@@ -1,3 +1,3 @@
-Hi welcome! this is my personal portfolio website.
+Hi welcome ~ this is my personal portfolio website.
 I am a beginner aspiring to be a web developer and data analyst. :)))
 
