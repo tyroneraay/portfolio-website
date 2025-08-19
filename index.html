@@ -3,10 +3,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio</title>
+        <title>Tyrone's Portfolio</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Hello I am Tyrone!</h1>
-        <p>Welcome to my personal portfolio website</p>
+        <!--Navigation-->
+        <nav>
+            <h2 class="logo">Tyrone</h2>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!--Hero Navigation-->
+        <section id="hero">
+            <h1> Hello, I am Tyrone</h1>
+            <p>Aspiring Data Analyst and Web Developer</p>
+            <button onclick="scrollToContact()">Contact Me</button>
+        </section>
+
+        <!--About Section-->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am passionate about data analytics.This portfolio showcases my projects and journey</p>
+        </section>
+        
+        <!--Project Section-->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">Data Analytics Dashboard</div>
+            <div class="project-card">Portfolio Website</div>
+        </section>
+
+        <!--Contact Section-->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message"></textarea>
+            </form>
+        </section>
+        
+        <script src="script.js"></script>
+
     </body>
 </html>
