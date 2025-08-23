@@ -4,60 +4,140 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tyrone's Portfolio</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+
         <!--Navigation-->
         <nav>
-            <h2 class="logo">Tyrone</h2>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>
+            <div class="logo">My Portfolio</div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                </button>
+
+        <!-- Nav Links-->
+         <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+         </ul>
+
         </nav>
 
         <!--Hero Navigation-->
         <section id="hero">
+            <div class="hero-bg">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
             <h1> Hello, I am Tyrone</h1>
             <p>Aspiring Data Analyst and Web Developer</p>
-            <button onclick="scrollToContact()">Contact Me</button>
+            <button onclick="scrollToView()">Contact Me</button>
         </section>
 
-        <!--About Section-->
-        <section id="about" class="about-section">
-            <div class="about-container">
+        <!-- About Me Section -->
+            <section id="about">
+            <div class="container about-container">
+                
+                <!-- Profile Picture -->
                 <div class="about-image">
-                    <img src="image/picture.jpg" alt="Tyrone">
+                <img src="profile.jpg" alt="Your Name">
                 </div>
+
+                <!-- About Text -->
                 <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hi! I'm Tyrone, an aspiring <strong>Data Analyst</strong> passionate about turning data into stories and insights.
-                       I enjoy solving problems, learning new tools, and constantly improving myself.
-                    </p>
-                    <p>
-                        Outside of coding and analytics, I love working out, cooking Filipino dishes, and exploring new skills that keep me growing every day.
-                    </p>
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    Hi, I'm <strong>[Your Name]</strong> 👋 A passionate data analyst skilled in
+                    Power BI, SQL, and Python. <br>I enjoy transforming complex datasets into
+                    clear insights and building dashboards that help businesses grow.
+                </p>
+
+                <!-- Resume Buttons -->
+                <div class="resume-buttons">
+                    <a href="resume.pdf" target="_blank" class="btn primary-btn">📄 View Resume</a>
+                   
+                </div>
+                </div>
+                
+            </div>
+            </section>
+
+
+
+        
+        <!-- Project Section -->
+            <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+
+                <a href="#" target="_blank" class="project-card">
+                    <img src="https://placehold.co/400x400?text=Sales+Dashboard" alt="Sales Dashboard">
+                    <div class="project-info">
+                    <h3>Sales Dashboard</h3>
+                    <p>Interactive Power BI dashboard for sales performance and trends.</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="project-card">
+                    <img src="https://placehold.co/400x400?text=Portfolio+Website" alt="Portfolio Website">
+                    <div class="project-info">
+                    <h3>Web Portfolio</h3>
+                    <p>Personal portfolio website showcasing skills and experience.</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="project-card">
+                    <img src="https://placehold.co/400x400?text=Data+Cleaning+Script" alt="Data Cleaning Script">
+                    <div class="project-info">
+                    <h3>Data Cleaning Script</h3>
+                    <p>Python script automating data cleaning for large datasets.</p>
+                    </div>
+                </a>
+
                 </div>
             </div>
-        </section>
-        
-        <!--Project Section-->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-card">Data Analytics Dashboard</div>
-            <div class="project-card">Portfolio Website</div>
-        </section>
+            </section>
+
+
 
         <!--Contact Section-->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message"></textarea>
-            </form>
-        </section>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form id="contactForm" action="https://formspree.io/f/mvgqeawo" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="_replyto" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <p id="formMessage" style="display:none;"></p>
+            </section>
+
+            <!-- Footer Section -->
+            <footer>
+            <div class="footer-container">
+                <p>© 2025 Tyrone. All Rights Reserved.</p>
+                <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                </div>
+            <div class="social-icons">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+
+
+            </div>
+            </footer>
+
         
         <script src="script.js"></script>
 
