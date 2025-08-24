@@ -101,13 +101,15 @@ export default function Projects() {
     </section>
   );
 } 
+/* form */
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
-  const formMessage = document.getElementById("formMessage");
+  const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault(); // stop redirect
 
     const formData = new FormData(form);
 
@@ -115,22 +117,24 @@ document.addEventListener("DOMContentLoaded", function () {
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
-        headers: { 'Accept': 'application/json' }
+        headers: {
+          Accept: "application/json"   // 👈 prevents redirect
+        }
       });
 
       if (response.ok) {
-        formMessage.style.display = "block";
-        formMessage.style.color = "green";
-        formMessage.textContent = "✅ Message sent successfully!";
+        status.innerHTML = "✅ Thank you! Your message has been sent.";
         form.reset();
       } else {
-        throw new Error("Form submission failed");
+        status.innerHTML = "❌ Oops! Something went wrong. Please try again.";
       }
     } catch (error) {
-      formMessage.style.display = "block";
-      formMessage.style.color = "red";
-      formMessage.textContent = "❌ Oops! Something went wrong. Please try again.";
+      status.innerHTML = "⚠️ Network error. Please try again later.";
     }
   });
 });
+
+
+
+
 
