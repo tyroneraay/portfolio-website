@@ -172,17 +172,19 @@
 
 
 
-        <!--Contact Section-->
+        
+            <!-- Contact Section -->
             <section id="contact">
-                <h2>Contact Me</h2>
-                <form id="contactForm" action="https://formspree.io/f/mvgqeawo" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="_replyto" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-                <p id="form-status"></p>
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" name="from_name" placeholder="Your Name" required>
+                <input type="email" name="reply_to" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p>
             </section>
+
 
 
             <!-- Footer Section -->
@@ -204,7 +206,38 @@
             </div>
             </footer>
 
-        
+
+           <!-- EmailJS SDK -->
+                <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+                <script>
+                (function() {
+                    emailjs.init("rAA8uSp9FFzFn18cV");
+                })();
+
+                document.getElementById("contactForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+                    const status = document.getElementById("form-status");
+
+                    // Collect form data
+                    const formData = new FormData(this);
+                    formData.append("time", new Date().toLocaleString()); // ✅ Add current time
+
+                    // Send email
+                    emailjs.send("service_b47ueq4", "template_hjyeeqd", Object.fromEntries(formData))
+                    .then(() => {
+                        status.innerHTML = "✅ Thank you! Your message has been sent.";
+                        status.style.color = "green";
+                        this.reset();
+                    }, (error) => {
+                        status.innerHTML = "❌ Oops! Something went wrong. Please try again.";
+                        status.style.color = "red";
+                        console.error("EmailJS Error:", error);
+                    });
+                });
+                </script>
+
+                    
         <script src="script.js"></script>
 
     </body>

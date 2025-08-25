@@ -101,38 +101,8 @@ export default function Projects() {
     </section>
   );
 } 
-/* form */
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // stop redirect
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json"   // 👈 prevents redirect
-        }
-      });
-
-      if (response.ok) {
-        status.innerHTML = "✅ Thank you! Your message has been sent.";
-        form.reset();
-      } else {
-        status.innerHTML = "❌ Oops! Something went wrong. Please try again.";
-      }
-    } catch (error) {
-      status.innerHTML = "⚠️ Network error. Please try again later.";
-    }
-  });
-});
 
 
 
